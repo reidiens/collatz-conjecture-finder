@@ -39,6 +39,7 @@ int main() {
 	char ans;
 	scanf("%c", &ans);
 	getchar();
+	iter = 0;
 	goto res;
 
 }
