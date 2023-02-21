@@ -18,7 +18,7 @@ First, in a terminal, navigate to the folder where you downloaded to using the `
 
 Next, type 
 ``` gcc main.c -o [OUTPUT FILE NAME] ```
-to compile the source and output an executable file in the same folder as the source. The output name does not matter.
+to compile the source and output an executable file in the same folder as it. The output name does not matter.
 
 After that, use 
 ```./[OUTPUT FILE NAME]```
