@@ -12,7 +12,7 @@ This is a very, very basic program, made as a fun little way for me to experimen
 
 
 ## How To Use:
-Like I said, this program is very basic. You have to compile it yourself. I'm not entirely sure how this is done on a Windows devic but if you use GCC, it's pretty easy:
+Like I said, this program is very basic. You have to compile it yourself. I'm not entirely sure how this is done on a Windows device but if you use GCC, it's pretty easy:
 
 First, in a terminal, navigate to the folder where you downloaded to using the `ls` command or its equivalent.
 
