@@ -1,46 +1,38 @@
 #include <stdio.h>
-#include <stdlib.h>
+#define EVENOP a/2              /* what to do if even/odd */ 
+#define ODDOP a*3+1             /*                        */ 
 
-long int val;
-long int hold;
-int iter = 0;
 
-int main() {
-	res:
-	system("clear");
-	printf("%c]0;%s%c", '\033', "Collatz Finder", '\007');
-	printf(" >> Please enter a starting value:\n> ");
-	scanf(" %li", &val);
-	long int org = val;
-	printf("\n* %li", org);
-	while (val > 1) {
-		if (val % 2 == 0) {
-			hold = val / 2;
-			printf("\n* %li", hold);
-			val = hold;
-			iter++;
-		}
-		else {
-			hold = val * 3 + 1;
-			printf("\n* %li", hold);
-			val = hold;
-			iter++;
-		}
-	}
-	if (val < 1) {
-		printf("\n\n***  Overflow error. Please input a smaller number   ***\nPress <ENTER> to restart.\n");
-		char fart;
-		scanf("%c");
-		getchar();
-		goto res;
-	}
-	printf("\n\n >> The number %li takes %d iterations to reach 1.\n", org, iter);
-	printf(" >> Press <ENTER> to go again, or use Ctrl+C to exit. \n> ");
-	char ans;
-	scanf("%c", &ans);
-	getchar();
-	iter = 0;
-	goto res;
+int count;                      // iteration counter
 
+void collatz(long int a) {      // function that does all the math
+    printf("\n# %6lu", a);
+    while (a > 1) {             
+        if (a % 2 == 0) {       // check if a is even
+            count++;    
+            printf("\n# %7lu", a = EVENOP);
+        }     
+        else {
+            count++;
+            printf("\n# %7lu", a = ODDOP);
+        }
+        
+    }
 }
 
+int main() {
+    inp:                            // restart point if error is encountered
+    long int a, org;
+    printf("Enter a value:\n> ");
+    scanf("%lu", &a);
+    getchar();
+    long int* b = &a;               // pointer for error checking
+    if (a <= 0) {                   // checks for input error
+        printf("\n** Please enter a positive, non-zero integer.\n\n");
+        b = NULL;                   // deinitialize a (so that error check works multiple times)
+        goto inp;                   
+    }
+    org = a;                        // store original value
+    collatz(a);
+    printf("\nThe number %lu takes %d iterations to reach 1.", org, count);
+}
