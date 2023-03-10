@@ -46,9 +46,8 @@ int main() {
 
     printf("\n\nGo again? ");
     char res[10];                     // 10 is an arbitrary value (res = restart)
-    scanf("%s", res);
+    fgets(res, sizeof(res), stdin);
     printf("\n");                   // give space b/w "Go again?" text and "Enter value" text if "y" is input
-    getchar();
     
     if (strncmp(res, "yes\n", SIGCHARS) == 0 || strncmp(res, "Yes\n", 1) == 0) {
         org_num = 0;
