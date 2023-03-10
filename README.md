@@ -23,7 +23,7 @@ v3 has the following changes:
 
   - Integers sometimes become too large and overflow
   - Entering an invalid number after restarting performs the conjecture for the previous value entered and exits the program
-  - Entering too many characters when choosing whether or not to restart causes the same issue stated above (at least it's better than stack smashing)
+  - Entering too many characters when choosing whether or not to restart causes the same issue stated above (only if first letter is 'y')
  
 I'm pretty sure problems 2 and 3 could be solved if there were a way to manually destruct variables on the stack, but alas.
 
